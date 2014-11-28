@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+<p>
+	Watch My Anime is a simple web service that notifies you when new episodes of your favorite anime are uploaded by your favorite fansubbers.
+</p>
+<hr />
+{% from '_formhelpers.html' import render_form %}
+{{ render_form(form) }}
+{% endblock %}

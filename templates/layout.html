@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+	</head>
+	<body>
+		<section id="top">
+			<header>
+				<h2>Watch My Anime</h2>
+			</header>
+		</section>
+		<section id="main">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<aside class="alert">
+						<ul>
+							{% for message in messages %}
+								<li>{{ message|safe }}</li>
+							{% endfor %}
+						</ul>
+					</aside>
+				{% endif %}
+			{% endwith %}
+			{% block content %}{% endblock %}
+			<p>
+				Made with &#9829; by <a href="http://wildandrewlee.com">Andrew Lee</a>.
+				Feel free to fork Watch My Anime on <a href="https://github.com/WildAndrewLee/Watch-My-Anime">Github</a>.
+			</p>
+		</section>
+	</body>
+</html>
