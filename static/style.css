@@ -26,10 +26,15 @@ a:hover {
 	background: #2C2C2C;
 }
 
-#top header {
-	padding: 14px 0px 20px;
+#top div {
 	max-width: 720px;
 	margin: 0px auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+#top header, #top nav {
+	display: inline-block;
 }
 
 #top header h2 {
@@ -39,6 +44,20 @@ a:hover {
 	color: #fff;
 	letter-spacing: 2px;
 	margin: 0px;
+}
+
+#top a {
+	padding: 14px 20px 0px;
+	color: #fff !important;
+	border: none !important;
+	height: 54px;
+	display: inline-block;
+	box-sizing: border-box;
+	transition: 0.1s background;
+}
+
+#top a:hover {
+	background: #3e3e3e;
 }
 
 #main {

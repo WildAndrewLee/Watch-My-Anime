@@ -7,9 +7,14 @@
 	</head>
 	<body>
 		<section id="top">
-			<header>
-				<h2>Watch My Anime</h2>
-			</header>
+			<div>
+				<header>
+					<h2><a href="/">Watch My Anime</a></h2>
+				</header>
+				<nav>
+					<a href="/faq">FAQ</a><a href="/contact">Contact</a>
+				</nav>
+			</div>
 		</section>
 		<section id="main">
 			{% with messages = get_flashed_messages() %}
@@ -24,10 +29,6 @@
 				{% endif %}
 			{% endwith %}
 			{% block content %}{% endblock %}
-			<p>
-				Made with &#9829; by <a href="http://wildandrewlee.com">Andrew Lee</a>.
-				Feel free to fork Watch My Anime on <a href="https://github.com/WildAndrewLee/Watch-My-Anime">Github</a>.
-			</p>
 		</section>
 	</body>
 </html>

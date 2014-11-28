@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+<p>
+	<h2>Frequently Asked Questions</h2>
+	<hr />
+	<h3>Why am I not getting email notifications?</h3>
+	<p>
+		There are several reasons as to why you may not be receiving email notifications.
+		<ul>
+			<li>Email from Watch My Anime may be marked as spam by your email provider.</li>
+			<li>Watch My Anime uses <a href="https://mandrillapp.com/">Mandrill</a> to send emails. Sometimes emails sent through Mandrill may take a few extra minutes to actually be sent.</li>
+			<li>
+				Watch My Anime may not be able to find new releases for your anime even though they are on <a href="http://nyaa.se">Nyaa</a>. In this case you should make sure you entered the anime's information correctly. In addition, Watch My Anime utilizes sub group naming conventions when searching for releases. This means that if a torrent name does not match something such as [Sub Group] Anime Name - Episode [Hash][Quality][Hash].ext, then it will not be recognized as a release by Watch My Anime.
+			</li>
+		</ul>
+	</p>
+	<h3>How often does Watch my Anime check for new releases?</h3>
+	<p>
+		Watch My Anime currently checks for new releases at one minute intervals.
+	</p>
+	<h3>How do I unwatch an anime?</h3>
+	<p>
+		To unwatch an anime you can use the link provided in each email notification.
+	</p>
+	<h3>Will Watch My Anime be free forever?</h3>
+	<p>
+		Watch My Anime will <b>always</b> be free.
+	</p>
+	<h3>How does Watch My Anime check for new episodes?</h3>
+	<p>
+		Watch My Anime uses <a href="http://www.nyaa.se/">Nyaa's</a> <a href="http://www.nyaa.se/?page=rss">RSS</a> feed in order to pull information about new releases.
+	</p>
+	<h3>Is Watch My Anime open source?</h3>
+	<p>
+		Watch My Anime is, and always will be, open source. The source code is currently hosted on <a href="https://github.com/WildAndrewLee/Watch-My-Anime">Github</a>.
+	</p>
+	<h3>Can I donate to help pay for the domain name/hosting?</h3>
+	<p>
+		Watch My Anime doesn't need donations in its current state as the hosting for it currently costs $5.00 a month. If you would like to donate anyway, we are accepting Bitcoin. You can send Bitcoins to:
+		<br />
+		<br />
+		<a href="bitcoin:115u2HxPHRPyewzzP1JzVxUUNcxe2uMmYK?label=watch.my.anime&message=bills">115u2HxPHRPyewzzP1JzVxUUNcxe2uMmYK</a>
+	</p>
+</p>
+{% endblock %}

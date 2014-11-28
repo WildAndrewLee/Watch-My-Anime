@@ -38,6 +38,20 @@ def unsubscribe(h):
 	return redirect('/')
 
 '''
+Render FAQ
+'''
+@app.route('/faq', methods = ['GET'])
+def faq():
+	return render_template('faq.html', title = 'Frequently Asked Questions')
+
+'''
+Render Contact
+'''
+@app.route('/contact', methods = ['GET'])
+def contact():
+	return render_template('contact.html', title = 'Contact')
+
+'''
 Render Index Page
 '''
 @app.route('/', methods = ['GET', 'POST'])
