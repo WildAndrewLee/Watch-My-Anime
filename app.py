@@ -1,6 +1,7 @@
 '''
 WATCH MY ANIME
 '''
+from json import dumps
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 from secrets import mail
@@ -20,6 +21,25 @@ app.config['MAIL_USERNAME'] = mail['username']
 app.config['MAIL_PASSWORD'] = mail['password']
 
 mailman = Mail(app)
+
+'''
+REST API
+'''
+@app.route('/api/fetch/<path:email>', methods = ['GET'])
+def api_fetch(email):
+	if email:
+		watching = Anime.fetchUpdates(email)
+		watchList = []
+
+		for watch in watching:
+			watch.last_update = watch.watched
+			watch.save()
+
+			watchList.append(watch.toJSON())
+
+		return dumps(watchList)
+
+	return redirect('/')
 
 '''
 Unsubscribe from the Service
@@ -69,7 +89,8 @@ def index(status = None):
 		flash(
 			'''
 			You are now watching [{0}] {1}. To unwatch this click <a href="/unsubscribe/{2}">here</a>.
-			'''.format(add.subber.data, add.name.data, anime.h))
+			'''.format(add.subber.data, add.name.data, anime.h)
+		)
 
 		return redirect('/success')
 

@@ -23,7 +23,7 @@ class Watch(Form):
 		('1080', '1080p'),
 		('720', '720p'),
 		('480', '480p'),
-		('N/A', 'N/A')
+		('N/A', 'Other')
 	], validators = [
 		validators.Optional()
 	])

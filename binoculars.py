@@ -63,6 +63,5 @@ for anime in feed['entries']:
 
 	except Exception as e:
 		print e
-		raise
 
 print 'Finished Cron at ' + time.strftime('%I:%M:%S') + ' on ' + time.strftime('%m/%d/%Y')

@@ -2,8 +2,6 @@
 <html>
 	<head>
 		<title>{{ title }}</title>
-		<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 	</head>
 	<body>
 		<section id="top">
@@ -30,5 +28,7 @@
 			{% endwith %}
 			{% block content %}{% endblock %}
 		</section>
+		<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 	</body>
 </html>

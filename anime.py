@@ -15,6 +15,8 @@ class Anime(db.Model):
 	email = db.Column(db.String(255))
 	watched = db.Column(db.Integer)
 	h = db.Column(db.String(255))
+	url = db.Column(db.String(255))
+	last_update = db.Column(db.Integer)
 
 	@staticmethod
 	def getAllMatches(subber, title, episode, quality, format):
@@ -37,6 +39,13 @@ class Anime(db.Model):
 		return Anime.query.filter(
 			Anime.h == h
 		)
+
+	@staticmethod
+	def fetchUpdates(email):
+		return Anime.query.filter(
+			Anime.email == email,
+			Anime.last_update != Anime.watched
+		)
 	 
 	def __init__(self, anime, subber, format, quality, email):
 		self.anime = anime
@@ -54,3 +63,11 @@ class Anime(db.Model):
 	def delete(self):
 		db.session.delete(self)
 		db.session.commit()
+
+	def toJSON(self):
+		return dict(
+			anime = self.anime,
+			subber = self.subber,
+			quality = self.quality,
+			watched = self.watched
+		)
